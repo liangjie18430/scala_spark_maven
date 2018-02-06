@@ -1,0 +1,8 @@
+*.iml
+/target
+*.swp
+.DS_Store
+/.idea
+*.class
+/out
+*.MF

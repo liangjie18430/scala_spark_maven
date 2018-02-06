@@ -1,0 +1,9 @@
+VM options设置
+-Dspark.master=spark://localhost:7077 -Dspark.driver.port=50491 -Dspark.jars=/Users/admin/workspace/scala_workspace/scala_maven_test/out/artifacts/scala_maven_test_jar/scala_maven_test.jar
+
+
+
+
+-Dspark.master=spark://localhost:7077 -Dspark.driver.port=50491 -Dspark.jars=/Users/admin/workspace/scala_workspace/scala_maven_test/target/test-1.0-with-dependencies.jar
+
+
