@@ -6,7 +6,7 @@
     <version>1.0</version>
     <properties>
         <!--scala的大版本-->
-        <scala.big.version>2.11</scala.big.version>
+        <scala.big.version>2.12</scala.big.version>
         <!--scala的详细版本-->
         <scala.detail.version>2.12.20</scala.detail.version>
         <hadoop.version>2.7.3</hadoop.version>
