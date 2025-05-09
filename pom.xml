@@ -5,10 +5,11 @@
     <artifactId>test</artifactId>
     <version>1.0</version>
     <properties>
+        <!-- 在mac中最好相关的使用下载过来的jdk1.8, 不要使用brew install的java        -->
         <!--scala的大版本-->
-        <scala.big.version>2.12</scala.big.version>
+        <scala.big.version>2.11</scala.big.version>
         <!--scala的详细版本-->
-        <scala.detail.version>2.12.20</scala.detail.version>
+        <scala.detail.version>2.11.12</scala.detail.version>
         <hadoop.version>2.7.3</hadoop.version>
         <spark.version>2.4.8</spark.version>
         <kafka.version>0.10.2.1</kafka.version>
