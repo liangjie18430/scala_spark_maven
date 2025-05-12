@@ -8,14 +8,17 @@
         <!-- 在mac中最好相关的使用下载过来的jdk1.8, 不要使用brew install的java        -->
         <!--scala的大版本-->
         <!--        <scala.big.version>2.11</scala.big.version>-->
-        <scala.big.version>2.11</scala.big.version>
+        <scala.big.version>2.12</scala.big.version>
 
         <!--scala的详细版本-->
-        <!-- 这里的版本号根据下载的spark的jar包中的scala的版本号来确定-->
-                <scala.detail.version>2.11.12</scala.detail.version>
-<!--        <scala.detail.version>2.12.20</scala.detail.version>-->
-        <hadoop.version>2.7.3</hadoop.version>
-        <spark.version>2.4.8</spark.version>
+        <!-- 这里的版本号根据下载的spark的jars包中的scala的版本号来确定, 里边一些相关的包注意更新对应的版本-->
+<!--                <scala.detail.version>2.11.12</scala.detail.version>-->
+        <scala.detail.version>2.12.20</scala.detail.version>
+<!--        <hadoop.version>2.7.3</hadoop.version>-->
+        <hadoop.version>3.3.1</hadoop.version>
+<!--        <spark.version>2.4.8</spark.version>-->
+        <spark.version>3.3.1</spark.version>
+
         <kafka.version>0.10.2.1</kafka.version>
         <maven.compiler.version>3.7.0</maven.compiler.version>
         <maven.assemble.version>3.1.0</maven.assemble.version>
@@ -55,14 +58,6 @@
             <scope>test</scope>
         </dependency>
 
-
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-client</artifactId>
-            <version>${hadoop.version}</version>
-            <!-- <scope>provided</scope> -->
-
-        </dependency>
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-mapreduce-client-core</artifactId>
@@ -197,14 +192,45 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.1.1</version>
+            <version>1.1.3</version>
             <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.1</version>
+            <version>3.12.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.13.4</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-databind</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+<!--        -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.13.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-scala_2.12</artifactId>
+            <version>2.13.4</version>
+        </dependency>
+
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
@@ -213,7 +239,7 @@
         <dependency>
             <groupId>org.apache.hadoop</groupId>
             <artifactId>hadoop-client</artifactId>
-            <version>2.7.3</version>
+            <version>${hadoop.version}</version>
             <!-- <scope>provided</scope> -->
         </dependency>
     </dependencies>
